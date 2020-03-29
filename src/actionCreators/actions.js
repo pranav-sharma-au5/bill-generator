@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export function getTables() {
-  const request = axios.get('http://localhost:8081/table')
+  const request = axios.get('https://restauraunt-api.herokuapp.com/table')
 
   return (dispatch) => {
     request.then(tables => {
@@ -14,7 +14,7 @@ export function getTables() {
   }
 }
 export function getWaiters() {
-  const request = axios.get('http://localhost:8081/waiter')
+  const request = axios.get('https://restauraunt-api.herokuapp.com/waiter')
 
   return (dispatch) => {
     request.then(waiter => {
@@ -27,7 +27,7 @@ export function getWaiters() {
   }
 }
 export function getMenu() {
-  const request = axios.get('http://localhost:8081/menu')
+  const request = axios.get('https://restauraunt-api.herokuapp.com/menu')
 
   return (dispatch) => {
     request.then(menu => {
@@ -84,7 +84,7 @@ export function generateBill(value) {
     total: totalPrice
   } = value
   // console.log({ username, userMobile, items, paymentMode, tableId, waiterId, totalPrice })
-  const request = axios.post('http://localhost:8081/bill', { username, userMobile, items, paymentMode, tableId, waiterId, totalPrice })
+  const request = axios.post('https://restauraunt-api.herokuapp.com/bill', { username, userMobile, items, paymentMode, tableId, waiterId, totalPrice })
 
   request.then(done => {
     console.log(done.data, "bill")
